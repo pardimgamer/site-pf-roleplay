@@ -36,7 +36,7 @@
             <p>CONCURSO PÚBLICO - CARGO: AGENTE</p>
         </div>
 
-        <form action="https://formspree.io/f/xaqdapdo" method="POST">
+        <form action="https://formspree.io/f/xaqdapdo" method="POST" onsubmit="finalizar(event)">
             
             <div class="info-card" id="bloco-auth">
                 <h2 style="color:#f1c40f; margin-bottom:15px; text-align: center;">AUTENTICAÇÃO DO CANDIDATO</h2>
@@ -268,6 +268,16 @@
             } else {
                 alert("Por favor, preencha todos os dados antes de iniciar a prova.");
             }
+        }
+
+        // ADICIONADO: Função para alertar e retornar à página inicial
+        function finalizar(event) {
+            alert("Respostas enviadas com sucesso! Você será redirecionado para a página inicial.");
+            
+            // Aguarda 2 segundos para dar tempo do Formspree processar o envio
+            setTimeout(() => {
+                window.location.href = "index.html"; 
+            }, 2000);
         }
     </script>
 
